@@ -11,7 +11,7 @@ Update the <lastmod> dates when pages are modified.
 
   <!-- Homepage -->
   <url>
-    <loc>https://theembers.mediabrilliance.io/</loc>
+    <loc>https://www.theemberskc.com/</loc>
     <lastmod>2025-01-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -19,7 +19,7 @@ Update the <lastmod> dates when pages are modified.
 
   <!-- Privacy Policy -->
   <url>
-    <loc>https://theembers.mediabrilliance.io/privacy.html</loc>
+    <loc>https://www.theemberskc.com/privacy.html</loc>
     <lastmod>2025-01-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
