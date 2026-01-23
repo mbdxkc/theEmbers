@@ -1065,5 +1065,511 @@ img{
 
 
 /* =========================================================
-   end of base.css
+   25) header overrides
+   ========================================================= */
+.site-header{
+  height: 64px;
+  background: rgba(0,0,0,0.8);
+}
+
+.header-grid{
+  width: 100%;
+  max-width: var(--container);
+}
+
+.nav{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-left,
+.nav-center,
+.nav-right{
+  display: flex;
+  align-items: center;
+}
+
+.nav-left{
+  flex: 1;
+  gap: 2rem;
+}
+
+.nav-center{
+  flex: 0 0 auto;
+  padding: 0 2rem;
+}
+
+.nav-right{
+  flex: 1;
+  justify-content: flex-end;
+  gap: 0.75rem;
+}
+
+
+/* =========================================================
+   26) logo hover effect
+   ========================================================= */
+.nav-logo{
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.nav-logo img{
+  height: 36px;
+  width: auto;
+  transition: opacity var(--t-fast) ease;
+}
+
+.nav-logo .logo-hover{
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.nav-logo:hover .logo-default{
+  opacity: 0;
+}
+
+.nav-logo:hover .logo-hover{
+  opacity: 1;
+}
+
+
+/* =========================================================
+   27) nav link styles
+   ========================================================= */
+.nav-left .nav-link{
+  position: relative;
+  padding: 0.5rem 0;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--muted);
+  transition: color var(--t-base) ease;
+}
+
+.nav-left .nav-link::after{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #E63946, #FF9F1C);
+  transition: width var(--t-base) ease;
+}
+
+.nav-left .nav-link:hover{
+  color: var(--text);
+}
+
+.nav-left .nav-link:hover::after{
+  width: 100%;
+}
+
+
+/* =========================================================
+   28) social icon buttons
+   ========================================================= */
+.nav-right .nav-link{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: all var(--t-base) ease;
+}
+
+.nav-right .nav-link:hover{
+  background: var(--accent-primary);
+  border-color: var(--accent-primary);
+  transform: translateY(-2px);
+}
+
+.nav-right .nav-link svg{
+  transition: fill var(--t-fast) ease;
+}
+
+.nav-right .nav-link:hover svg{
+  fill: #000;
+}
+
+
+/* =========================================================
+   29) hero section
+   ========================================================= */
+.hero{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content{
+  max-width: 800px;
+}
+
+.band-logo{
+  max-width: 320px;
+  width: 100%;
+  height: auto;
+  margin: 0 auto 1.5rem;
+}
+
+.tagline{
+  font-size: clamp(1.125rem, 3vw, 1.5rem);
+  color: var(--muted);
+  font-weight: 300;
+  margin-bottom: 2rem;
+}
+
+.cta-buttons{
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+
+/* =========================================================
+   30) section titles
+   ========================================================= */
+.section-title{
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-title span{
+  background: linear-gradient(135deg, #E63946, #FF9F1C);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+
+/* =========================================================
+   31) reviews section
+   ========================================================= */
+.reviews-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.review-card{
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  position: relative;
+}
+
+.review-card::before{
+  content: '"';
+  font-family: 'Playfair Display', serif;
+  font-size: 4rem;
+  color: var(--accent-secondary);
+  opacity: 0.3;
+  position: absolute;
+  top: 0.5rem;
+  left: 1rem;
+  line-height: 1;
+}
+
+.review-text{
+  font-size: 1.125rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  padding-top: 1rem;
+}
+
+.reviewer{
+  font-weight: 600;
+  color: var(--accent-highlight);
+}
+
+
+/* =========================================================
+   32) contact section
+   ========================================================= */
+.contact-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.contact-item{
+  text-align: center;
+  padding: 2rem;
+}
+
+.contact-icon{
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.05);
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.contact-icon svg{
+  width: 28px;
+  height: 28px;
+  fill: var(--accent-secondary);
+}
+
+.contact-label{
+  font-size: 0.875rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+}
+
+.contact-value{
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.contact-value a{
+  color: var(--text);
+  transition: color var(--t-fast) ease;
+}
+
+.contact-value a:hover{
+  color: var(--accent-secondary);
+}
+
+
+/* =========================================================
+   33) social links
+   ========================================================= */
+.social-links{
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.social-link{
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 50%;
+  transition: all var(--t-base) ease;
+}
+
+.social-link:hover{
+  background: var(--accent-primary);
+  border-color: var(--accent-primary);
+  transform: translateY(-3px);
+}
+
+.social-link svg{
+  width: 24px;
+  height: 24px;
+  fill: var(--text);
+}
+
+.social-link:hover svg{
+  fill: #000;
+}
+
+
+/* =========================================================
+   34) site footer
+   ========================================================= */
+.site-footer{
+  text-align: center;
+  padding: 2rem 1rem;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.footer-logo{
+  max-width: 120px;
+  height: auto;
+  margin: 0 auto 1rem;
+  opacity: 0.7;
+}
+
+.footer-links{
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.footer-links a{
+  color: var(--muted);
+  transition: color var(--t-fast) ease;
+}
+
+.footer-links a:hover{
+  color: var(--accent-secondary);
+}
+
+.footer-legal{
+  margin-bottom: 0.5rem;
+}
+
+.footer-legal a{
+  font-size: 0.75rem;
+  color: var(--muted);
+  opacity: 0.7;
+  transition: opacity var(--t-fast) ease;
+}
+
+.footer-legal a:hover{
+  opacity: 1;
+  color: var(--accent-secondary);
+}
+
+
+/* =========================================================
+   35) ember glow effects
+   ========================================================= */
+.ember-glow{
+  position: fixed;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(255,107,53,0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.ember-glow-1{
+  top: -100px;
+  right: -100px;
+  background: radial-gradient(circle, rgba(230,57,70,0.15) 0%, transparent 70%);
+}
+
+.ember-glow-2{
+  bottom: -100px;
+  left: -100px;
+  background: radial-gradient(circle, rgba(255,159,28,0.12) 0%, transparent 70%);
+}
+
+
+/* =========================================================
+   36) photo carousel
+   ========================================================= */
+.carousel{
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.carousel-track{
+  display: flex;
+  gap: 1rem;
+  animation: scroll 40s linear infinite;
+  width: max-content;
+}
+
+.carousel-track:hover{
+  animation-play-state: paused;
+}
+
+.carousel-slide{
+  flex-shrink: 0;
+  width: 300px;
+  height: 300px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.carousel-slide img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--t-base) ease;
+}
+
+.carousel-slide:hover img{
+  transform: scale(1.05);
+}
+
+@keyframes scroll{
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.carousel-fade-left,
+.carousel-fade-right{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.carousel-fade-left{
+  left: 0;
+  background: linear-gradient(to right, rgba(0,0,0,0.95) 0%, transparent 100%);
+}
+
+.carousel-fade-right{
+  right: 0;
+  background: linear-gradient(to left, rgba(0,0,0,0.95) 0%, transparent 100%);
+}
+
+
+/* =========================================================
+   37) mobile nav overrides
+   ========================================================= */
+@media (max-width: 768px){
+  .nav-left{
+    display: none;
+  }
+
+  .nav-center{
+    flex: 1;
+    padding: 0;
+  }
+
+  .nav-right{
+    flex: 0 0 auto;
+  }
+
+  .nav-toggle{
+    display: block;
+  }
+
+  .carousel-slide{
+    width: 250px;
+    height: 250px;
+  }
+}
+
+
+/* =========================================================
+   end of style.css
    ========================================================= */

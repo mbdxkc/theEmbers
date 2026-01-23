@@ -1,0 +1,16 @@
+# ============================================================================
+# THE EMBERS KC - Robots.txt
+# ============================================================================
+# This file tells search engine crawlers which pages they can access.
+# ============================================================================
+
+# Allow all crawlers to access the entire site
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://theembers.mediabrilliance.io/sitemap.xml
+
+# Disallow crawling of development/system files (if any exist)
+Disallow: /*.min.js$
+Disallow: /*.min.css$
