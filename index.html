@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <!--
+  ============================================================================
+  project title
+  ============================================================================
+  @project    project name
+  @version    0.0
+  @author     author <email>
+  @date       year-mo-dy
+  @file       .html
+  @desc       page description
+  @license    (c) 
+  @requires   - /js/header.js, /js/footer.js, /js/page-transition.js
+              - /style.css
+  @a11y       - skip link, semantic html, wcag 2.1 aa compliant
+  ============================================================================
+  project v0.0 | page
+  ============================================================================
+  -->
+
+    <!-- core meta -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>page title</title>
+    <meta name="description" content="page description" />
+    <link rel="canonical" href="https://example.com/" />
+
+    <!-- social / previews -->
+    <meta property="og:title" content="site name" />
+    <meta property="og:description" content="site description" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://example.com/" />
+    <meta property="og:image" content="/og.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="site name" />
+    <meta name="twitter:description" content="site description" />
+    <meta name="twitter:image" content="/og.png" />
+
+    <!-- icons -->
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200..1000&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- styles -->
+    <link rel="stylesheet" href="/style.css" />
+
+  </head>
+
+  <body>
+    <!-- =====================================================
+         page transition + skip link
+         ===================================================== -->
+    <div id="page-transition" aria-hidden="true"></div>
+    <a class="skip-link" href="#main_container">skip to main content</a>
+
+    <!-- =====================================================
+         header (injected by JS)
+         ===================================================== -->
+    <header id="site-header" class="site-header" role="banner"></header>
+
+    <!-- mobile menu -->
+    <div class="mobile-menu" aria-label="mobile navigation">
+    <!-- mobile nav links -->
+    </div>
+
+    <!-- =====================================================
+         main
+         ===================================================== -->
+    <main id="main_container" class="container" role="main">
+      <!-- page content -->
+    </main>
+
+    <!-- =====================================================
+         footer injected by js
+         ===================================================== -->
+    <footer id="site-footer" class="footer" role="contentinfo"></footer>
+
+    <!-- =====================================================
+         scripts
+         ===================================================== -->
+    <script src="/js/page-transition.js" defer></script>
+    <script src="/js/utils.js" defer></script>
+    <script src="/js/header.js" defer></script>
+    <script src="/js/footer.js" defer></script>
+
+  </body>
+</html>
