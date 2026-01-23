@@ -121,6 +121,42 @@ body{
   transform: translateX(-100%);
 }
 
+/* =========================================================
+   4b) smoke dissolve transition
+   ========================================================= */
+body.smoke-dissolve main,
+body.smoke-dissolve .hero,
+body.smoke-dissolve .site-footer{
+  filter: blur(12px);
+  opacity: 0.3;
+  transform: translateY(-20px) scale(1.02);
+  transition:
+    filter 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.45s ease-out,
+    transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body.smoke-reform main,
+body.smoke-reform .hero,
+body.smoke-reform .site-footer{
+  filter: blur(0);
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transition:
+    filter 0.6s cubic-bezier(0.2, 0, 0.2, 1),
+    opacity 0.6s ease-out,
+    transform 0.6s cubic-bezier(0.2, 0, 0.2, 1);
+}
+
+body.smoke-dissolve .site-header,
+body.smoke-reform .site-header{
+  transition: opacity 0.3s ease;
+}
+
+body.smoke-dissolve .site-header{
+  opacity: 0.5;
+}
+
 main{
   flex: 1 0 auto;
   opacity: 1;
