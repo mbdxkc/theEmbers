@@ -1341,59 +1341,82 @@ img{
 
 
 /* =========================================================
-   32) contact section
+   32) contact form
    ========================================================= */
-.contact-grid{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  max-width: 1000px;
+.contact-form{
+  max-width: 600px;
   margin: 0 auto;
 }
 
-.contact-item{
-  text-align: center;
-  padding: 2rem;
+.form-row{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
 }
 
-.contact-icon{
-  width: 64px;
-  height: 64px;
-  margin: 0 auto 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(255,255,255,0.05);
-  border-radius: 50%;
-  border: 1px solid rgba(255,255,255,0.1);
+@media (max-width: 600px){
+  .form-row{
+    grid-template-columns: 1fr;
+  }
 }
 
-.contact-icon svg{
-  width: 28px;
-  height: 28px;
-  fill: var(--accent-secondary);
+.form-group{
+  margin-bottom: 1.5rem;
 }
 
-.contact-label{
+.form-label{
+  display: block;
   font-size: 0.875rem;
-  color: var(--muted);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin-bottom: 0.5rem;
-}
-
-.contact-value{
-  font-size: 1.25rem;
   font-weight: 500;
-}
-
-.contact-value a{
   color: var(--text);
-  transition: color var(--t-fast) ease;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
-.contact-value a:hover{
-  color: var(--accent-secondary);
+.form-label .required{
+  color: var(--accent-primary);
+}
+
+.form-input{
+  width: 100%;
+  padding: 1rem 1.25rem;
+  font-size: 1rem;
+  font-family: inherit;
+  color: var(--text);
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: var(--radius-sm);
+  transition:
+    border-color var(--t-fast) ease,
+    background var(--t-fast) ease,
+    box-shadow var(--t-fast) ease;
+}
+
+.form-input::placeholder{
+  color: var(--muted);
+  opacity: 0.2;
+}
+
+.form-input:hover{
+  border-color: rgba(255,255,255,0.3);
+  background: rgba(255,255,255,0.05);
+}
+
+.form-input:focus{
+  outline: none;
+  border-color: var(--accent-secondary);
+  background: rgba(255,255,255,0.05);
+  box-shadow: 0 0 0 3px rgba(255,159,28,0.15);
+}
+
+.form-textarea{
+  resize: vertical;
+  min-height: 140px;
+}
+
+.contact-form .button{
+  margin-top: 0.5rem;
 }
 
 
