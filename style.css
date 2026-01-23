@@ -21,7 +21,7 @@
 
   /* layout */
   --container: 1200px;
-  --header-h:  48px;
+  --header-h:  64px;
 
   /* shape */
   --radius-sm: 12px;
@@ -56,6 +56,7 @@ html{
 
 body{
   margin: 0;
+  padding-top: var(--header-h);
   min-height: 100vh;
   min-height: 100dvh;
 
@@ -215,8 +216,9 @@ a:hover{
 }
 
 .site-header{
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
   z-index: 1000;
 
   height: var(--header-h);
@@ -1104,7 +1106,7 @@ img{
    25) header overrides
    ========================================================= */
 .site-header{
-  height: 64px;
+  height: var(--header-h);
   background: rgba(0,0,0,0.8);
 }
 
