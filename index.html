@@ -97,8 +97,8 @@ THE EMBERS KC - Official Website
          PRELOAD CRITICAL ASSETS
          Improves perceived performance by loading key images early
          =================================================================== -->
-    <link rel="preload" href="/images/theEmbers_wordmark.svg" as="image" />
     <link rel="preload" href="/images/embers.webp" as="image" />
+    <link rel="preload" href="/images/theEmbers_wordmark.svg" as="image" />
 
     <!-- ===================================================================
          STYLESHEETS
@@ -107,7 +107,17 @@ THE EMBERS KC - Official Website
 
   </head>
 
-  <body>
+  <body class="intro-active">
+    <!-- ===================================================================
+         HOME PAGE INTRO ANIMATION
+         Ember-themed loading animation shown once per session
+         =================================================================== -->
+    <div id="ember-intro" aria-hidden="true">
+      <canvas id="ember-intro-canvas"></canvas>
+      <div class="intro-glow"></div>
+      <img src="/images/embers.webp" alt="" class="intro-logo" />
+    </div>
+
     <!-- ===================================================================
          AMBIENT GLOW EFFECTS
          Decorative background gradients for visual atmosphere
@@ -259,7 +269,7 @@ THE EMBERS KC - Official Website
             </div>
             <button type="submit" class="button button-primary button-lg button-block">Send Message</button>
           </form>
-        </div>
+        </div> 
       </section>
 
     </main>
@@ -275,6 +285,7 @@ THE EMBERS KC - Official Website
          SCRIPTS
          Loaded at end of body for better performance
          =================================================================== -->
+    <script src="/js/home-intro.js"></script>
     <script src="/js/header.min.js"></script>
     <script src="/js/footer.min.js"></script>
     <script src="/js/ember-particles.min.js"></script>

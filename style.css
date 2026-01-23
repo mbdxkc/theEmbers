@@ -178,6 +178,136 @@ body.is-leaving main{
 
 
 /* =========================================================
+   4c) home page ember intro (initial load only)
+   ========================================================= */
+#ember-intro{
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity 1.2s ease-out,
+    transform 1.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#ember-intro .intro-logo,
+#ember-intro .intro-glow{
+  transition:
+    transform 1s ease-out,
+    opacity 0.8s ease-out;
+}
+
+#ember-intro.fade-out{
+  opacity: 0;
+  transform: translateY(-100%);
+  pointer-events: none;
+}
+
+#ember-intro.fade-out .intro-logo,
+#ember-intro.fade-out .intro-glow{
+  transform: translateY(-80px) scale(0.9);
+  opacity: 0;
+}
+
+#ember-intro.hidden{
+  display: none;
+}
+
+/* fade in page content beneath intro */
+.site-header,
+.hero,
+main,
+.site-footer,
+.ember-glow{
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity 0.8s ease-out,
+    transform 1s ease-out;
+}
+
+body.intro-active .site-header,
+body.intro-active .hero,
+body.intro-active main,
+body.intro-active .site-footer,
+body.intro-active .ember-glow{
+  opacity: 0;
+  transition: none;
+}
+
+body.intro-active .hero,
+body.intro-active main{
+  transform: translateY(20px);
+}
+
+/* ember particles canvas */
+#ember-intro-canvas{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* center glow pulse */
+#ember-intro .intro-glow{
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(140, 35, 45, 0.35) 0%,
+    rgba(160, 80, 15, 0.15) 40%,
+    transparent 70%
+  );
+  animation: intro-pulse 1.2s ease-in-out infinite;
+}
+
+@keyframes intro-pulse{
+  0%, 100%{ transform: scale(1); opacity: 0.4; }
+  50%{ transform: scale(1.1); opacity: 0.7; }
+}
+
+/* intro logo */
+#ember-intro .intro-logo{
+  position: relative;
+  z-index: 1;
+  width: 160px;
+  height: 160px;
+  opacity: 0;
+  transform: scale(0.85);
+  filter: brightness(0.8);
+  animation: intro-logo-in 0.8s ease-out 0.4s forwards;
+}
+
+@keyframes intro-logo-in{
+  to{
+    opacity: 0.9;
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce){
+  #ember-intro{
+    transition: none;
+  }
+  #ember-intro .intro-glow{
+    animation: none;
+  }
+  #ember-intro .intro-logo{
+    animation: none;
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+/* =========================================================
    5) typography
    ========================================================= */
 h1,h2,h3,h4,h5,h6{
