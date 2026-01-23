@@ -32,7 +32,7 @@
 
       <!-- BAND LOGO -->
       <!-- Smaller, semi-transparent version of the main logo -->
-      <img src="/images/embers.webp" alt="The Embers KC" class="footer-logo">
+      <img src="/images/embers.webp" alt="The Embers KC" class="footer-logo" width="120" height="120">
 
       <!-- SOCIAL MEDIA LINKS -->
       <div class="footer-links">

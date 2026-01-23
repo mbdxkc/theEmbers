@@ -51,7 +51,7 @@ THE EMBERS KC - Official Website
     <meta property="og:description" content="Kansas City cover band bringing a whole new vibe to your good time." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.theemberskc.com/" />
-    <meta property="og:image" content="/images/embers.png" />
+    <meta property="og:image" content="https://www.theemberskc.com/images/embers.png" />
 
     <!-- ===================================================================
          TWITTER CARD
@@ -60,13 +60,29 @@ THE EMBERS KC - Official Website
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="The Embers KC" />
     <meta name="twitter:description" content="Kansas City cover band bringing a whole new vibe to your good time." />
-    <meta name="twitter:image" content="/images/embers.png" />
+    <meta name="twitter:image" content="https://www.theemberskc.com/images/embers.png" />
 
     <!-- ===================================================================
-         ICONS
+         ICONS - Cross-device favicon support
          =================================================================== -->
-    <link rel="icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <!-- Standard favicon for browsers -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512x512.png" />
+
+    <!-- Apple Touch Icon (iOS home screen) -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+    <!-- Web App Manifest (Android/PWA) -->
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Windows/Microsoft tiles -->
+    <meta name="msapplication-TileColor" content="#000000" />
+    <meta name="msapplication-TileImage" content="/favicon-192x192.png" />
+
+    <!-- Theme colors -->
+    <meta name="theme-color" content="#000000" />
 
     <!-- ===================================================================
          FONTS
@@ -75,7 +91,7 @@ THE EMBERS KC - Official Website
          =================================================================== -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
 
     <!-- ===================================================================
          PRELOAD CRITICAL ASSETS
@@ -110,7 +126,7 @@ THE EMBERS KC - Official Website
          Injected dynamically by header.js
          Contains: Logo, navigation links, social media icons
          =================================================================== -->
-    <header id="site-header" class="site-header" role="banner"></header>
+    <header id="site-header" class="site-header"></header>
 
     <!-- ===================================================================
          HERO SECTION
@@ -118,7 +134,7 @@ THE EMBERS KC - Official Website
          =================================================================== -->
     <section class="hero" id="hero">
       <div class="hero-content">
-        <img src="/images/embers.webp" alt="The Embers KC" class="band-logo" />
+        <img src="/images/embers.webp" alt="The Embers KC" class="band-logo" width="320" height="320" />
         <p class="tagline">Kansas City cover band bringing a whole new vibe to your good time.</p>
         <div class="cta-buttons">
           <a href="#contact" class="button button-primary button-lg">Book Us</a>
@@ -130,7 +146,7 @@ THE EMBERS KC - Official Website
     <!-- ===================================================================
          MAIN CONTENT
          =================================================================== -->
-    <main id="main" role="main">
+    <main id="main">
 
       <!-- =================================================================
            PHOTO GALLERY
@@ -149,46 +165,46 @@ THE EMBERS KC - Official Website
           <!-- Scrolling track with all photos (duplicated for infinite loop) -->
           <div class="carousel-track">
             <!-- First set of photos -->
-            <div class="carousel-slide"><img src="/photos/hero.jpg" alt="The Embers KC performing" loading="lazy"></div>
-            <div class="carousel-slide"><img src="/photos/473189158_545598648483403_5986348059631690604_n.jpg" alt="The Embers KC performing" loading="lazy"></div>
-            <div class="carousel-slide"><img src="/photos/473235373_545598651816736_6158907921518937504_n.jpg" alt="The Embers KC performing" loading="lazy"></div>
-            <div class="carousel-slide"><img src="/photos/473312607_545598711816730_2591185418448044547_n.jpg" alt="The Embers KC performing" loading="lazy"></div>
-            <div class="carousel-slide"><img src="/photos/474583311_553070517736216_924577881213731085_n.jpg" alt="The Embers KC performing" loading="lazy"></div>
-            <div class="carousel-slide"><img src="/photos/474607070_553070444402890_5623853648929574228_n.jpg" alt="The Embers KC performing" loading="lazy"></div>
-            <div class="carousel-slide"><img src="/photos/474620734_553070544402880_4161946813399675872_n.jpg" alt="The Embers KC performing" loading="lazy"></div>
-            <div class="carousel-slide"><img src="/photos/480154324_571455842564350_5565247105348153619_n.jpg" alt="The Embers KC performing" loading="lazy"></div>
-            <div class="carousel-slide"><img src="/photos/480326887_571455452564389_8864417787243793417_n.jpg" alt="The Embers KC performing" loading="lazy"></div>
-            <div class="carousel-slide"><img src="/photos/484148536_591576573885610_4621089933391638767_n.jpg" alt="The Embers KC performing" loading="lazy"></div>
-            <div class="carousel-slide"><img src="/photos/484790998_591574537219147_6289935996998483853_n.jpg" alt="The Embers KC performing" loading="lazy"></div>
-            <div class="carousel-slide"><img src="/photos/484904958_591575180552416_3428002950121462658_n.jpg" alt="The Embers KC performing" loading="lazy"></div>
-            <div class="carousel-slide"><img src="/photos/485087071_591577017218899_8404517490749446794_n.jpg" alt="The Embers KC performing" loading="lazy"></div>
-            <div class="carousel-slide"><img src="/photos/487509525_601348632908404_8471816342495416898_n.jpg" alt="The Embers KC performing" loading="lazy"></div>
-            <div class="carousel-slide"><img src="/photos/530488909_17965211864947416_6413661742358498153_n.jpg" alt="The Embers KC performing" loading="lazy"></div>
-            <div class="carousel-slide"><img src="/photos/539744632_721031897606743_5188378920850360240_n.jpg" alt="The Embers KC performing" loading="lazy"></div>
-            <div class="carousel-slide"><img src="/photos/539793523_721031900940076_2869039348183605081_n.jpg" alt="The Embers KC performing" loading="lazy"></div>
-            <div class="carousel-slide"><img src="/photos/540494283_720997680943498_5378029401998930020_n.jpg" alt="The Embers KC performing" loading="lazy"></div>
-            <div class="carousel-slide"><img src="/photos/544787616_726334147076518_5211568366565270371_n.jpg" alt="The Embers KC performing" loading="lazy"></div>
+            <div class="carousel-slide"><img src="/photos/hero.jpg" alt="The Embers KC band on stage" width="300" height="300" loading="lazy"></div>
+            <div class="carousel-slide"><img src="/photos/473189158_545598648483403_5986348059631690604_n.jpg" alt="Lead vocalist performing at a live show" width="300" height="300" loading="lazy"></div>
+            <div class="carousel-slide"><img src="/photos/473235373_545598651816736_6158907921518937504_n.jpg" alt="Band members during a performance" width="300" height="300" loading="lazy"></div>
+            <div class="carousel-slide"><img src="/photos/473312607_545598711816730_2591185418448044547_n.jpg" alt="Guitarist playing on stage" width="300" height="300" loading="lazy"></div>
+            <div class="carousel-slide"><img src="/photos/474583311_553070517736216_924577881213731085_n.jpg" alt="The Embers KC entertaining the crowd" width="300" height="300" loading="lazy"></div>
+            <div class="carousel-slide"><img src="/photos/474607070_553070444402890_5623853648929574228_n.jpg" alt="Live performance shot with stage lights" width="300" height="300" loading="lazy"></div>
+            <div class="carousel-slide"><img src="/photos/474620734_553070544402880_4161946813399675872_n.jpg" alt="Band performing at a Kansas City venue" width="300" height="300" loading="lazy"></div>
+            <div class="carousel-slide"><img src="/photos/480154324_571455842564350_5565247105348153619_n.jpg" alt="Vocalist engaging with the audience" width="300" height="300" loading="lazy"></div>
+            <div class="carousel-slide"><img src="/photos/480326887_571455452564389_8864417787243793417_n.jpg" alt="Full band shot during a set" width="300" height="300" loading="lazy"></div>
+            <div class="carousel-slide"><img src="/photos/484148536_591576573885610_4621089933391638767_n.jpg" alt="The Embers KC at a private event" width="300" height="300" loading="lazy"></div>
+            <div class="carousel-slide"><img src="/photos/484790998_591574537219147_6289935996998483853_n.jpg" alt="Band members performing together" width="300" height="300" loading="lazy"></div>
+            <div class="carousel-slide"><img src="/photos/484904958_591575180552416_3428002950121462658_n.jpg" alt="Stage performance with colorful lighting" width="300" height="300" loading="lazy"></div>
+            <div class="carousel-slide"><img src="/photos/485087071_591577017218899_8404517490749446794_n.jpg" alt="The Embers KC cover band live" width="300" height="300" loading="lazy"></div>
+            <div class="carousel-slide"><img src="/photos/487509525_601348632908404_8471816342495416898_n.jpg" alt="Energetic live show moment" width="300" height="300" loading="lazy"></div>
+            <div class="carousel-slide"><img src="/photos/530488909_17965211864947416_6413661742358498153_n.jpg" alt="Band playing at a local venue" width="300" height="300" loading="lazy"></div>
+            <div class="carousel-slide"><img src="/photos/539744632_721031897606743_5188378920850360240_n.jpg" alt="The Embers KC on stage in Kansas City" width="300" height="300" loading="lazy"></div>
+            <div class="carousel-slide"><img src="/photos/539793523_721031900940076_2869039348183605081_n.jpg" alt="Concert performance shot" width="300" height="300" loading="lazy"></div>
+            <div class="carousel-slide"><img src="/photos/540494283_720997680943498_5378029401998930020_n.jpg" alt="Band rocking out on stage" width="300" height="300" loading="lazy"></div>
+            <div class="carousel-slide"><img src="/photos/544787616_726334147076518_5211568366565270371_n.jpg" alt="The Embers KC delivering a great show" width="300" height="300" loading="lazy"></div>
 
-            <!-- Duplicate set for seamless infinite loop -->
-            <div class="carousel-slide"><img src="/photos/hero.jpg" alt="The Embers KC performing" loading="lazy"></div>
-            <div class="carousel-slide"><img src="/photos/473189158_545598648483403_5986348059631690604_n.jpg" alt="The Embers KC performing" loading="lazy"></div>
-            <div class="carousel-slide"><img src="/photos/473235373_545598651816736_6158907921518937504_n.jpg" alt="The Embers KC performing" loading="lazy"></div>
-            <div class="carousel-slide"><img src="/photos/473312607_545598711816730_2591185418448044547_n.jpg" alt="The Embers KC performing" loading="lazy"></div>
-            <div class="carousel-slide"><img src="/photos/474583311_553070517736216_924577881213731085_n.jpg" alt="The Embers KC performing" loading="lazy"></div>
-            <div class="carousel-slide"><img src="/photos/474607070_553070444402890_5623853648929574228_n.jpg" alt="The Embers KC performing" loading="lazy"></div>
-            <div class="carousel-slide"><img src="/photos/474620734_553070544402880_4161946813399675872_n.jpg" alt="The Embers KC performing" loading="lazy"></div>
-            <div class="carousel-slide"><img src="/photos/480154324_571455842564350_5565247105348153619_n.jpg" alt="The Embers KC performing" loading="lazy"></div>
-            <div class="carousel-slide"><img src="/photos/480326887_571455452564389_8864417787243793417_n.jpg" alt="The Embers KC performing" loading="lazy"></div>
-            <div class="carousel-slide"><img src="/photos/484148536_591576573885610_4621089933391638767_n.jpg" alt="The Embers KC performing" loading="lazy"></div>
-            <div class="carousel-slide"><img src="/photos/484790998_591574537219147_6289935996998483853_n.jpg" alt="The Embers KC performing" loading="lazy"></div>
-            <div class="carousel-slide"><img src="/photos/484904958_591575180552416_3428002950121462658_n.jpg" alt="The Embers KC performing" loading="lazy"></div>
-            <div class="carousel-slide"><img src="/photos/485087071_591577017218899_8404517490749446794_n.jpg" alt="The Embers KC performing" loading="lazy"></div>
-            <div class="carousel-slide"><img src="/photos/487509525_601348632908404_8471816342495416898_n.jpg" alt="The Embers KC performing" loading="lazy"></div>
-            <div class="carousel-slide"><img src="/photos/530488909_17965211864947416_6413661742358498153_n.jpg" alt="The Embers KC performing" loading="lazy"></div>
-            <div class="carousel-slide"><img src="/photos/539744632_721031897606743_5188378920850360240_n.jpg" alt="The Embers KC performing" loading="lazy"></div>
-            <div class="carousel-slide"><img src="/photos/539793523_721031900940076_2869039348183605081_n.jpg" alt="The Embers KC performing" loading="lazy"></div>
-            <div class="carousel-slide"><img src="/photos/540494283_720997680943498_5378029401998930020_n.jpg" alt="The Embers KC performing" loading="lazy"></div>
-            <div class="carousel-slide"><img src="/photos/544787616_726334147076518_5211568366565270371_n.jpg" alt="The Embers KC performing" loading="lazy"></div>
+            <!-- Duplicate set for seamless infinite loop (aria-hidden for screen readers) -->
+            <div class="carousel-slide" aria-hidden="true"><img src="/photos/hero.jpg" alt="" width="300" height="300" loading="lazy"></div>
+            <div class="carousel-slide" aria-hidden="true"><img src="/photos/473189158_545598648483403_5986348059631690604_n.jpg" alt="" width="300" height="300" loading="lazy"></div>
+            <div class="carousel-slide" aria-hidden="true"><img src="/photos/473235373_545598651816736_6158907921518937504_n.jpg" alt="" width="300" height="300" loading="lazy"></div>
+            <div class="carousel-slide" aria-hidden="true"><img src="/photos/473312607_545598711816730_2591185418448044547_n.jpg" alt="" width="300" height="300" loading="lazy"></div>
+            <div class="carousel-slide" aria-hidden="true"><img src="/photos/474583311_553070517736216_924577881213731085_n.jpg" alt="" width="300" height="300" loading="lazy"></div>
+            <div class="carousel-slide" aria-hidden="true"><img src="/photos/474607070_553070444402890_5623853648929574228_n.jpg" alt="" width="300" height="300" loading="lazy"></div>
+            <div class="carousel-slide" aria-hidden="true"><img src="/photos/474620734_553070544402880_4161946813399675872_n.jpg" alt="" width="300" height="300" loading="lazy"></div>
+            <div class="carousel-slide" aria-hidden="true"><img src="/photos/480154324_571455842564350_5565247105348153619_n.jpg" alt="" width="300" height="300" loading="lazy"></div>
+            <div class="carousel-slide" aria-hidden="true"><img src="/photos/480326887_571455452564389_8864417787243793417_n.jpg" alt="" width="300" height="300" loading="lazy"></div>
+            <div class="carousel-slide" aria-hidden="true"><img src="/photos/484148536_591576573885610_4621089933391638767_n.jpg" alt="" width="300" height="300" loading="lazy"></div>
+            <div class="carousel-slide" aria-hidden="true"><img src="/photos/484790998_591574537219147_6289935996998483853_n.jpg" alt="" width="300" height="300" loading="lazy"></div>
+            <div class="carousel-slide" aria-hidden="true"><img src="/photos/484904958_591575180552416_3428002950121462658_n.jpg" alt="" width="300" height="300" loading="lazy"></div>
+            <div class="carousel-slide" aria-hidden="true"><img src="/photos/485087071_591577017218899_8404517490749446794_n.jpg" alt="" width="300" height="300" loading="lazy"></div>
+            <div class="carousel-slide" aria-hidden="true"><img src="/photos/487509525_601348632908404_8471816342495416898_n.jpg" alt="" width="300" height="300" loading="lazy"></div>
+            <div class="carousel-slide" aria-hidden="true"><img src="/photos/530488909_17965211864947416_6413661742358498153_n.jpg" alt="" width="300" height="300" loading="lazy"></div>
+            <div class="carousel-slide" aria-hidden="true"><img src="/photos/539744632_721031897606743_5188378920850360240_n.jpg" alt="" width="300" height="300" loading="lazy"></div>
+            <div class="carousel-slide" aria-hidden="true"><img src="/photos/539793523_721031900940076_2869039348183605081_n.jpg" alt="" width="300" height="300" loading="lazy"></div>
+            <div class="carousel-slide" aria-hidden="true"><img src="/photos/540494283_720997680943498_5378029401998930020_n.jpg" alt="" width="300" height="300" loading="lazy"></div>
+            <div class="carousel-slide" aria-hidden="true"><img src="/photos/544787616_726334147076518_5211568366565270371_n.jpg" alt="" width="300" height="300" loading="lazy"></div>
           </div>
         </div>
       </section>
@@ -226,7 +242,7 @@ THE EMBERS KC - Official Website
             <!-- Phone -->
             <div class="contact-item">
               <div class="contact-icon">
-                <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
               </div>
               <p class="contact-label">Call or Text</p>
               <p class="contact-value"><a href="tel:+19136057971">(913) 605-7971</a></p>
@@ -235,7 +251,7 @@ THE EMBERS KC - Official Website
             <!-- Email -->
             <div class="contact-item">
               <div class="contact-icon">
-                <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
               </div>
               <p class="contact-label">Email</p>
               <p class="contact-value"><a href="mailto:theemberskc@gmail.com">theemberskc@gmail.com</a></p>
@@ -244,7 +260,7 @@ THE EMBERS KC - Official Website
             <!-- Location -->
             <div class="contact-item">
               <div class="contact-icon">
-                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
               </div>
               <p class="contact-label">Location</p>
               <p class="contact-value">Kansas City</p>
@@ -270,7 +286,7 @@ THE EMBERS KC - Official Website
          Injected dynamically by footer.js
          Contains: Logo, social links, copyright
          =================================================================== -->
-    <footer id="site-footer" class="site-footer" role="contentinfo"></footer>
+    <footer id="site-footer" class="site-footer"></footer>
 
     <!-- ===================================================================
          SCRIPTS
@@ -278,6 +294,6 @@ THE EMBERS KC - Official Website
          =================================================================== -->
     <script src="/js/header.min.js"></script>
     <script src="/js/footer.min.js"></script>
-    <script src="/js/ember-particles.js"></script>
+    <script src="/js/ember-particles.min.js"></script>
   </body>
 </html>

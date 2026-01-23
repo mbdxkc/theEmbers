@@ -14,13 +14,16 @@ THE EMBERS KC - Privacy Policy
     <link rel="canonical" href="https://www.theemberskc.com/privacy.html" />
 
     <!-- icons -->
-    <link rel="icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#000000" />
 
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
 
     <!-- styles -->
     <link rel="stylesheet" href="/style.min.css" />
@@ -182,7 +185,8 @@ THE EMBERS KC - Privacy Policy
     <!-- Footer -->
     <footer class="site-footer">
       <img src="/images/embers.webp" alt="The Embers KC" class="footer-logo" />
-      <p class="text-sm text-muted">&copy; 2025 The Embers KC. All rights reserved.</p>
+      <p class="text-sm text-muted">&copy; <span id="year"></span> The Embers KC. All rights reserved.</p>
     </footer>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
   </body>
 </html>

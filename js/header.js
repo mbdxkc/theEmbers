@@ -44,8 +44,8 @@
         <!-- Two images are stacked; CSS handles the crossfade on hover -->
         <div class="nav-center">
           <a href="/" class="nav-logo">
-            <img src="/images/theEmbers_wordmark.svg" alt="The Embers KC" height="36" class="logo-default">
-            <img src="/images/theEmbers_hover.svg" alt="" height="36" class="logo-hover" aria-hidden="true">
+            <img src="/images/theEmbers_wordmark.svg" alt="The Embers KC" width="106" height="36" class="logo-default">
+            <img src="/images/theEmbers_hover.svg" alt="" width="106" height="36" class="logo-hover" aria-hidden="true">
           </a>
         </div>
 
