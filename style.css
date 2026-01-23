@@ -14,10 +14,10 @@
   --text:  rgba(255,255,255,.87);
   --muted: rgba(255,255,255,.7);
 
-  /* accents */
-  --accent-primary:   #008DDA;
-  --accent-secondary: #FF2DF1;
-  --accent-highlight: #FFFF00;
+  /* accents - glowing coals */
+  --accent-primary:   #E63946;
+  --accent-secondary: #FF9F1C;
+  --accent-highlight: #F4E8C1;
 
   /* layout */
   --container: 1200px;
@@ -383,7 +383,7 @@ img{
 .button:focus-visible{
   outline: none;
   box-shadow:
-    0 0 0 3px rgba(255,45,241,.5),
+    0 0 0 3px rgba(230,57,70,.5),
     var(--shadow-soft);
 }
 
