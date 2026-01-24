@@ -101,6 +101,38 @@ THE EMBERS KC - Official Website
     <link rel="preload" href="/images/theEmbers_wordmark.svg" as="image" />
 
     <!-- ===================================================================
+         STRUCTURED DATA (JSON-LD)
+         Helps search engines understand the site content
+         =================================================================== -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MusicGroup",
+      "name": "The Embers KC",
+      "alternateName": "The Embers",
+      "url": "https://www.theemberskc.com",
+      "logo": "https://www.theemberskc.com/images/embers.png",
+      "image": "https://www.theemberskc.com/images/embers.png",
+      "description": "Kansas City cover band bringing a whole new vibe to your good time.",
+      "genre": "Cover Band",
+      "areaServed": {
+        "@type": "City",
+        "name": "Kansas City"
+      },
+      "sameAs": [
+        "https://www.instagram.com/the_embers_kc/",
+        "https://www.facebook.com/profile.php?id=100090998160648"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+1-913-605-7971",
+        "email": "theemberskc@gmail.com",
+        "contactType": "booking"
+      }
+    }
+    </script>
+
+    <!-- ===================================================================
          STYLESHEETS
          =================================================================== -->
     <link rel="stylesheet" href="/style.min.css" />
@@ -167,7 +199,13 @@ THE EMBERS KC - Official Website
         <div class="container">
           <h2 class="section-title">The <span>Band</span></h2>
         </div>
-        <div class="carousel">
+        <div class="carousel" role="region" aria-label="Band photo gallery">
+          <!-- Pause/Play button for accessibility -->
+          <button class="carousel-pause" id="carousel-pause" aria-label="Pause carousel" aria-pressed="false">
+            <svg class="pause-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/></svg>
+            <svg class="play-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="display:none"><path d="M8 5v14l11-7z"/></svg>
+          </button>
+
           <!-- Fade overlays for smooth edge appearance -->
           <div class="carousel-fade-left" aria-hidden="true"></div>
           <div class="carousel-fade-right" aria-hidden="true"></div>
@@ -248,7 +286,10 @@ THE EMBERS KC - Official Website
           <h2 class="section-title">Get In <span>Touch</span></h2>
 
           <!-- Contact Form -->
-          <form class="contact-form" action="https://formspree.io/f/xbdgavak" method="POST">
+          <form class="contact-form" id="contact-form" action="https://formspree.io/f/xbdgavak" method="POST">
+            <!-- Honeypot field for spam protection -->
+            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
             <div class="form-row">
               <div class="form-group">
                 <label for="name" class="form-label">Name <span class="required">*</span></label>
@@ -268,6 +309,9 @@ THE EMBERS KC - Official Website
               <textarea id="message" name="message" class="form-input form-textarea" placeholder="Hey guys, love it! Would love to book you on Saturday nights to play on the patio of my restaurant this summer." rows="5" required></textarea>
             </div>
             <button type="submit" class="button button-primary button-lg button-block">Send Message</button>
+
+            <!-- Form status messages -->
+            <div id="form-status" class="form-status" aria-live="polite"></div>
           </form>
         </div> 
       </section>
@@ -285,9 +329,9 @@ THE EMBERS KC - Official Website
          SCRIPTS
          Loaded at end of body for better performance
          =================================================================== -->
-    <script src="/js/home-intro.js"></script>
+    <script src="/js/home-intro.min.js"></script>
     <script src="/js/header.min.js"></script>
     <script src="/js/footer.min.js"></script>
-    <script src="/js/ember-particles.min.js"></script>
+    <script src="/js/utils.min.js"></script>
   </body>
 </html>

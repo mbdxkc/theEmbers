@@ -121,12 +121,87 @@
   }
 
   /* ---------------------------------------------------------
+     carousel pause/play control
+     --------------------------------------------------------- */
+  function initCarouselControl() {
+    var pauseBtn = document.getElementById('carousel-pause');
+    var carousel = document.querySelector('.carousel');
+
+    if (!pauseBtn || !carousel) return;
+
+    var pauseIcon = pauseBtn.querySelector('.pause-icon');
+    var playIcon = pauseBtn.querySelector('.play-icon');
+    var isPaused = false;
+
+    pauseBtn.addEventListener('click', function () {
+      isPaused = !isPaused;
+      carousel.classList.toggle('is-paused', isPaused);
+      pauseBtn.setAttribute('aria-pressed', isPaused);
+      pauseBtn.setAttribute('aria-label', isPaused ? 'Play carousel' : 'Pause carousel');
+
+      if (pauseIcon && playIcon) {
+        pauseIcon.style.display = isPaused ? 'none' : 'block';
+        playIcon.style.display = isPaused ? 'block' : 'none';
+      }
+    });
+  }
+
+  /* ---------------------------------------------------------
+     contact form handling with feedback
+     --------------------------------------------------------- */
+  function initContactForm() {
+    var form = document.getElementById('contact-form');
+    var status = document.getElementById('form-status');
+
+    if (!form || !status) return;
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      var submitBtn = form.querySelector('button[type="submit"]');
+      var originalText = submitBtn.textContent;
+
+      // Show loading state
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+      status.className = 'form-status';
+      status.textContent = '';
+
+      // Submit via fetch
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      })
+      .then(function (response) {
+        if (response.ok) {
+          status.className = 'form-status form-status-success';
+          status.textContent = 'Thanks for reaching out! We\'ll get back to you soon.';
+          form.reset();
+        } else {
+          throw new Error('Form submission failed');
+        }
+      })
+      .catch(function () {
+        status.className = 'form-status form-status-error';
+        status.textContent = 'Oops! Something went wrong. Please try again or email us directly.';
+      })
+      .finally(function () {
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalText;
+      });
+    });
+  }
+
+  /* ---------------------------------------------------------
      initialize
      --------------------------------------------------------- */
   function init() {
     initMobileNav();
     initModals();
     initSmoothScroll();
+    initContactForm();
+    initCarouselControl();
   }
 
   if (document.readyState === 'loading') {

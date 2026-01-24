@@ -84,40 +84,12 @@
   // ---------------------------------------------------------------------------
   // DOM INSERTION
   // Finds the #site-header element and injects the header HTML.
-  // Also initializes the mobile menu functionality after insertion.
+  // Mobile menu functionality is handled by utils.js
   // ---------------------------------------------------------------------------
   function insertHeader() {
     const headerEl = document.getElementById("site-header");
     if (headerEl) {
       headerEl.innerHTML = headerHTML;
-      initMobileMenu();
-    }
-  }
-
-  // ---------------------------------------------------------------------------
-  // MOBILE MENU TOGGLE
-  // Handles the hamburger menu button click to show/hide the mobile menu.
-  // Also closes the menu when a navigation link is clicked.
-  // ---------------------------------------------------------------------------
-  function initMobileMenu() {
-    const toggle = document.querySelector(".nav-toggle");
-    const menu = document.getElementById("mobile-menu");
-
-    if (toggle && menu) {
-      // Toggle menu open/closed on button click
-      toggle.addEventListener("click", function () {
-        const expanded = toggle.getAttribute("aria-expanded") === "true";
-        toggle.setAttribute("aria-expanded", !expanded);
-        menu.classList.toggle("is-active");
-      });
-
-      // Close menu when any nav link is clicked
-      menu.querySelectorAll(".nav-link").forEach(function (link) {
-        link.addEventListener("click", function () {
-          toggle.setAttribute("aria-expanded", "false");
-          menu.classList.remove("is-active");
-        });
-      });
     }
   }
 

@@ -743,7 +743,7 @@ img{
 .form-select:focus{
   outline: none;
   border-color: var(--accent-primary);
-  box-shadow: 0 0 0 3px rgba(0,141,218,.25);
+  box-shadow: 0 0 0 3px rgba(230,57,70,.25);
 }
 
 .form-textarea{
@@ -794,7 +794,7 @@ img{
 
 .form-check-input:focus-visible{
   outline: none;
-  box-shadow: 0 0 0 3px rgba(0,141,218,.25);
+  box-shadow: 0 0 0 3px rgba(230,57,70,.25);
 }
 
 /* validation states */
@@ -1551,6 +1551,31 @@ img{
   margin-top: 0.5rem;
 }
 
+.form-status{
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: var(--radius-sm);
+  text-align: center;
+  font-weight: 500;
+  display: none;
+}
+
+.form-status:not(:empty){
+  display: block;
+}
+
+.form-status-success{
+  background: rgba(34, 197, 94, 0.15);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  color: #22c55e;
+}
+
+.form-status-error{
+  background: rgba(239, 68, 68, 0.15);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #ef4444;
+}
+
 
 /* =========================================================
    33) social links
@@ -1683,8 +1708,38 @@ img{
   width: max-content;
 }
 
-.carousel-track:hover{
+.carousel-track:hover,
+.carousel:focus-within .carousel-track,
+.carousel.is-paused .carousel-track{
   animation-play-state: paused;
+}
+
+.carousel-pause{
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 10;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.7);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 50%;
+  color: var(--text);
+  cursor: pointer;
+  transition: all var(--t-base) ease;
+}
+
+.carousel-pause:hover{
+  background: var(--accent-primary);
+  border-color: var(--accent-primary);
+}
+
+.carousel-pause:focus-visible{
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(230,57,70,.4);
 }
 
 .carousel-slide{
@@ -1734,7 +1789,77 @@ img{
 
 
 /* =========================================================
-   37) mobile nav overrides
+   37) inner page styles (privacy, etc.)
+   ========================================================= */
+.simple-header{
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.simple-header a{
+  display: inline-block;
+}
+
+.simple-header img{
+  height: 32px;
+  width: auto;
+}
+
+.page-header{
+  padding: 6rem 1rem 3rem;
+  text-align: center;
+}
+
+.page-title{
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: 1rem;
+}
+
+.page-content{
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1rem 4rem;
+}
+
+.page-content h2{
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  margin: 2.5rem 0 1rem;
+  color: var(--accent-highlight);
+}
+
+.page-content p{
+  line-height: 1.8;
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+
+.page-content ul{
+  color: var(--muted);
+  line-height: 1.8;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.page-content a{
+  color: var(--accent-primary);
+}
+
+.page-content a:hover{
+  color: var(--accent-secondary);
+}
+
+.last-updated{
+  font-size: 0.875rem;
+  color: var(--muted);
+  opacity: 0.7;
+}
+
+
+/* =========================================================
+   38) mobile nav overrides
    ========================================================= */
 @media (max-width: 768px){
   .nav-left{
