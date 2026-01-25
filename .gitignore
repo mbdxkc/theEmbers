@@ -13,3 +13,5 @@
 
 # Lighthouse reports
 lighthouse-report.report.html
+.vercel
+.env*.local

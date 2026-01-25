@@ -210,11 +210,6 @@
       window.addEventListener('load', onPageLoaded);
     }
 
-    // Auto-end intro after maximum duration (5 seconds)
-    setTimeout(function () {
-      pageLoaded = true;
-      endIntro();
-    }, 5000);
   }
 
   // Initialize when DOM is ready
