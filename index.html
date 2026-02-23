@@ -173,11 +173,21 @@ THE EMBERS KC - Official Website
 
     <!-- ===================================================================
          HERO SECTION
-         Full-screen landing area with band logo and call-to-action
+         Video hero with play overlay
          =================================================================== -->
     <section class="hero" id="hero">
       <div class="hero-content">
-        <img src="/images/embers.png" alt="The Embers KC" class="band-logo" width="320" height="320" />
+        <div class="hero-video-wrapper" id="hero-video-wrapper">
+          <div class="hero-video-overlay" id="hero-video-overlay">
+            <img src="/images/embers.png" alt="The Embers KC" class="hero-overlay-logo" width="200" height="200" />
+            <button class="hero-play-btn" id="hero-play-btn" aria-label="Play video">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="48" height="48">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+            </button>
+          </div>
+          <div class="hero-video-container" id="hero-video-container"></div>
+        </div>
         <p class="tagline">Kansas City cover band bringing a whole new vibe to your good time.</p>
         <div class="cta-buttons">
           <a href="#contact" class="button button-primary button-lg">Book Us</a>

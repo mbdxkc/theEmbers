@@ -194,6 +194,36 @@
   }
 
   /* ---------------------------------------------------------
+     hero video player
+     --------------------------------------------------------- */
+  function initHeroVideo() {
+    var overlay = document.getElementById('hero-video-overlay');
+    var container = document.getElementById('hero-video-container');
+    var playBtn = document.getElementById('hero-play-btn');
+
+    if (!overlay || !container || !playBtn) return;
+
+    var videoId = 'A7_155WhXDE';
+
+    function playVideo() {
+      var iframe = document.createElement('iframe');
+      iframe.src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0';
+      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+      iframe.allowFullscreen = true;
+      iframe.title = 'The Embers KC Video';
+
+      container.appendChild(iframe);
+      overlay.classList.add('hidden');
+    }
+
+    overlay.addEventListener('click', playVideo);
+    playBtn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      playVideo();
+    });
+  }
+
+  /* ---------------------------------------------------------
      initialize
      --------------------------------------------------------- */
   function init() {
@@ -202,6 +232,7 @@
     initSmoothScroll();
     initContactForm();
     initCarouselControl();
+    initHeroVideo();
   }
 
   if (document.readyState === 'loading') {
