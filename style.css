@@ -186,6 +186,7 @@ body.is-leaving main{
   z-index: 10000;
   background: #000;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   opacity: 1;
@@ -196,7 +197,8 @@ body.is-leaving main{
 }
 
 #ember-intro .intro-logo,
-#ember-intro .intro-glow{
+#ember-intro .intro-glow,
+#ember-intro .intro-promo{
   transition:
     transform 1s ease-out,
     opacity 0.8s ease-out;
@@ -211,6 +213,11 @@ body.is-leaving main{
 #ember-intro.fade-out .intro-logo,
 #ember-intro.fade-out .intro-glow{
   transform: translateY(-80px) scale(0.9);
+  opacity: 0;
+}
+
+#ember-intro.fade-out .intro-promo{
+  transform: translate(-50%, -150%);
   opacity: 0;
 }
 
@@ -273,6 +280,27 @@ body.intro-active main{
   50%{ transform: scale(1.1); opacity: 0.7; }
 }
 
+/* intro promo text */
+#ember-intro .intro-promo{
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.75rem;
+  color: #fff;
+  opacity: 0;
+  animation: intro-promo-in 0.8s ease-out 0.4s forwards;
+}
+
+@keyframes intro-promo-in{
+  to{
+    opacity: 0.5;
+  }
+}
+
 /* intro logo */
 #ember-intro .intro-logo{
   position: relative;
@@ -303,6 +331,10 @@ body.intro-active main{
     animation: none;
     opacity: 1;
     transform: scale(1);
+  }
+  #ember-intro .intro-promo{
+    animation: none;
+    opacity: 0.5;
   }
 }
 
