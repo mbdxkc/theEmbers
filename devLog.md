@@ -102,3 +102,37 @@ Slide counts balanced at 21 and 21, poster at 0/12/19, last slide unchanged. Eve
 - A script that validates before writing leaves the file untouched when the logic is wrong. Compute, assert, then write — never write incrementally through a loop that might fail halfway
 - Repeating an image for visual reasons should not repeat its announcement. Mark decorative repeats `aria-hidden` with empty `alt`
 - An editor may preserve a file's existing encoding when overwriting it. After rewriting a file that was UTF-16, check with `file` — the content can be right and still render as mojibake
+
+---
+
+## 2026-08-16 — Retire the April 2025 show poster and its orphan
+
+`pending` (6 files)
+
+### Change
+The carousel was still advertising April 2025 dates, two slides ahead of the current August booking. Removed the poster from both sets, deleted it and an already-orphaned sibling, and refreshed the sitemap.
+
+### What was stale
+| Item | Action |
+|---|---|
+| `embers-april-shows.webp` — April 2025 dates, in both carousel sets | Removed from markup, file deleted |
+| `embers-april-3-show.webp` — unreferenced by any page | File deleted |
+| `sitemap.xml` home `lastmod` 2026-02-23 | Updated to 2026-08-16 |
+| `privacy.html` "Last updated: January 2025" | **Left alone** — see below |
+
+The privacy date is a revision record, not a freshness indicator. The policy has not changed, so the date is accurate; editing it would assert a revision that did not happen. Stale-looking is not the same as stale.
+
+Duration 49s to 47s — 20 slides at the established 2.35s each.
+
+Removing the April slide shifted the show poster from 0/12/19 to **0/11/18 of 20**, which is still front, middle and second-from-last. Checked rather than assumed, since the positions were chosen relative to a longer deck.
+
+`privacy.html`'s sitemap entry keeps its February date because that page did not change; only the home entry moved.
+
+### Verification
+Slides balanced at 20 and 20. Every `/photos/*.webp` in the markup exists on disk, and no file in `photos/` is unreferenced. Directory down to 18 files, 1.6 MB.
+
+### Mistakes → Rules
+- Removing an item from a positioned list moves everything after it. Positions chosen against the old length have to be re-checked, not assumed to hold
+- Search for stale content by pattern, not by the one instance you were told about. Looking for "april" and "2025" surfaced an orphaned image nothing referenced and a sitemap date four months behind
+- A "Last updated" date on a policy document is a revision record. Refreshing it to look current asserts a change that did not happen — leave it unless the document itself changed
+- After deleting referenced assets, sweep for orphans in the other direction too: files nothing points at still ship in the deploy
