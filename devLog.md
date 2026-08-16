@@ -186,3 +186,49 @@ One swap inside the list of non-poster slides, then the track regenerated from t
 
 ### Mistakes → Rules
 - Repeated *kinds* of content cluster as easily as repeated files. After placing one set of items evenly, check what ended up adjacent — two different logo images read as a duplicate to a viewer even though no file repeats
+
+---
+
+## 2026-08-16 — Remove drummer photos and the second April flyer; add guest billing
+
+`pending` (10 files)
+
+### Change
+Six photos showing the drummer came out of the carousel, along with a second April 11 flyer that the earlier stale-content sweep missed. The splash gained a guest-drummer credit for the August show.
+
+### Photos removed
+| File | Why |
+|---|---|
+| `IMG_4407` | Drummer at the kit, sole subject |
+| `IMG_4408` | Drummer behind the vocalist |
+| `IMG_4410` | Drummer centre frame |
+| `IMG_4411` | Drummer behind the kit |
+| `544702575` | Drum kit and drummer on the patio |
+| `544787616` | Drummer seated at the kit |
+| `IMG_4409` | **April 11 flyer** — the dog promo |
+
+Identifying these needed looking at every photo; filenames carry no clue. The April flyer is the second one found: the earlier sweep grepped for "april" and this one is called `IMG_4409`, so only a visual pass surfaced it.
+
+**`472774928` was kept and is worth a second opinion.** It shows a full drum kit in the foreground with the vocalist standing behind it, but no drummer is in frame. The brief was "pictures with the drummer in it", and there is no drummer — but the kit is the most prominent object in the shot.
+
+### Carousel rebuilt
+20 slides down to 13. Both spacings recomputed against the new length rather than left where they were:
+
+- posters at **0, 4, 9** — gaps 4, 5, 4 including the wrap
+- brand images at **1, 7** — gaps 6, 7
+- duration **47s to 31s**, holding 2.35s per slide
+
+### Splash billing
+`.promo-feat` sits between the venue and the address: part of the announcement, so it reads ahead of wayfinding detail, but italic and smaller so it never competes with the venue name. The element is optional — a show without a guest simply omits it.
+
+### Files touched
+`index.html`, `style.css`, `style.min.css`, `README.md`, `devLog.md`, and 7 deleted photos.
+
+### Verification
+13 and 13, balanced. Every referenced photo exists; no orphans. Splash rendered at 320, 390 and 900px: the credit wraps to two lines on phones, one line on desktop, no overflow.
+
+### Mistakes → Rules
+- Content audits that depend on what an image *shows* cannot be done from filenames. `IMG_4409` was an event flyer and `IMG_4407` was a portrait of the person being removed; only looking at all of them found either
+- A stale-content sweep by keyword misses anything generically named. Follow a keyword grep with a visual pass over the same asset directory
+- `vw` units resolve against the viewport, not the parent element, so a harness that shrinks a container does not reproduce narrow-screen wrapping. Pin the test container to a percentage instead, or the text will appear to overflow when it would really wrap
+- Removing items changes every derived layout number. Both spacings and the animation duration were recomputed from the new count rather than carried over
