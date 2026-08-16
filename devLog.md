@@ -163,3 +163,26 @@ Rebuilt the track from an ordered list rather than inserting into the existing m
 - In a looping carousel, position is circular. "Front, middle, near the end" reads as even spacing in a list and is badly uneven in a loop — measure gaps modulo the length, including the wrap from last back to first
 - Even placement of `k` items across `n` slots is `round(i * n / k)`; do not eyeball it
 - When reordering a list, assert the multiset is unchanged against the previous commit. Reordering should move items, never drop or duplicate them, and a rebuild-from-scratch makes that easy to get wrong silently
+
+---
+
+## 2026-08-16 — Separate the two brand images
+
+`pending` (2 files)
+
+### Change
+`embers-promo-2026` and `embers_logo` sat at positions 1 and 2, so the loop opened with the show poster followed immediately by two logos back to back. Moved the second to position 11.
+
+Gap is now 10 either way, the maximum available in a 20-slot loop. The poster positions (0, 7, 13) were not disturbed.
+
+### Implementation
+One swap inside the list of non-poster slides, then the track regenerated from the resulting order. The photo multiset is asserted against the pre-edit markup, so the reorder provably moves slides without dropping or duplicating one — the rule written down after the last reorder, used here for the first time.
+
+### Files touched
+`index.html`, `README.md`, `devLog.md`.
+
+### Verification
+20 and 20, balanced. Posters at 0/7/13 with gaps 7/6/7; brand images at 1/11 with gaps 10/10. Photo multiset unchanged. Every referenced photo exists.
+
+### Mistakes → Rules
+- Repeated *kinds* of content cluster as easily as repeated files. After placing one set of items evenly, check what ended up adjacent — two different logo images read as a duplicate to a viewer even though no file repeats

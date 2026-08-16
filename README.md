@@ -109,6 +109,8 @@ When a booking passes, three things go stale together:
 
 Spacing the new poster: place `k` copies in `n` slides at `round(i * n / k)`. Measure the gaps **modulo n**, because the last copy's neighbour is the first copy of the next loop, not the end of the list.
 
+The two brand images (`embers-promo-2026`, `embers_logo`) sit opposite each other at 1 and 11 — gap 10 either way, the maximum in a 20-slot loop — so the loop does not open with two logos back to back.
+
 Check for orphans afterwards: any `photos/*.webp` not referenced by `index.html` is dead weight in the deploy.
 
 `privacy.html` carries a "Last updated" date. That is a revision record, not a freshness indicator — leave it alone unless the policy itself changes.
