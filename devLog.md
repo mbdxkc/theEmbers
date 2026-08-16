@@ -136,3 +136,30 @@ Slides balanced at 20 and 20. Every `/photos/*.webp` in the markup exists on dis
 - Search for stale content by pattern, not by the one instance you were told about. Looking for "april" and "2025" surfaced an orphaned image nothing referenced and a sitemap date four months behind
 - A "Last updated" date on a policy document is a revision record. Refreshing it to look current asserts a change that did not happen — leave it unless the document itself changed
 - After deleting referenced assets, sweep for orphans in the other direction too: files nothing points at still ship in the deploy
+
+---
+
+## 2026-08-16 — Space the show poster evenly around the loop
+
+`pending` (2 files)
+
+### Change
+The three show-poster slides sat at 0, 11 and 18 of 20. Moved to 0, 7 and 13.
+
+### The bug was in the wrap
+Measured within the list, 0/11/18 looks like reasonable coverage: front, middle, near the end. Measured *around the loop*, which is what a viewer actually experiences, the gaps are **11, 7 and 2** — the last copy and the first copy of the next pass are two slides apart, so the poster appears twice in quick succession at every restart and then vanishes for eleven slides.
+
+Even placement for `k` copies in `n` slides is `round(i * n / k)`: 0, 7, 13, giving gaps of 7, 6, 7. The rule is to measure gaps **modulo n**, since the last item's neighbour is the first item of the next loop.
+
+Rebuilt the track from an ordered list rather than inserting into the existing markup, and asserted the photo multiset was unchanged against `git show HEAD:index.html` — reordering should move slides, never lose or duplicate one.
+
+### Files touched
+`index.html`, `README.md`, `devLog.md`.
+
+### Verification
+20 and 20, balanced. Positions 0/7/13, gaps 7/6/7 including the wrap. Photo multiset identical to the previous commit. Exactly one descriptive `alt`; the two repeats stay `aria-hidden`. Every referenced photo exists.
+
+### Mistakes → Rules
+- In a looping carousel, position is circular. "Front, middle, near the end" reads as even spacing in a list and is badly uneven in a loop — measure gaps modulo the length, including the wrap from last back to first
+- Even placement of `k` items across `n` slots is `round(i * n / k)`; do not eyeball it
+- When reordering a list, assert the multiset is unchanged against the previous commit. Reordering should move items, never drop or duplicate them, and a rebuild-from-scratch makes that easy to get wrong silently

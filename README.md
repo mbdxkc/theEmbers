@@ -78,7 +78,7 @@ Infinite marquee of square photos. Two rules govern it, and both are easy to bre
 
 **Duration is per-loop, not per-slide.** Adding slides without raising `animation: scroll <n>s` speeds the whole carousel up. The established pace is about **2.35s per slide** — 20 slides at 47s.
 
-**The current show poster repeats three times** — positions 0, 11 and 18 of 20: front, middle and second-from-last — so a visitor catches it wherever the loop happens to be. Only the first carries descriptive `alt`; the repeats are `alt=""` with `aria-hidden="true"`, since hearing the same announcement three times is noise for a screen reader.
+**The current show poster repeats three times**, evenly spaced around the loop at positions 0, 7 and 13 of 20 — gaps of 7, 6 and 7 *including the wrap back to the start*, so it recurs at a steady interval rather than clustering near the seam — so a visitor catches it wherever the loop happens to be. Only the first carries descriptive `alt`; the repeats are `alt=""` with `aria-hidden="true"`, since hearing the same announcement three times is noise for a screen reader.
 
 **Images must be square.** Slides are 300×300 (250×250 under the mobile breakpoint) with `object-fit: cover`, so a non-square file gets cropped by the browser.
 
@@ -106,6 +106,8 @@ When a booking passes, three things go stale together:
 1. **The splash promo** in `index.html` reverts to a generic line
 2. **The poster slides** come out of *both* carousel sets, and `animation: scroll` drops by 2.35s per slide removed
 3. **The poster file** in `photos/` is deleted — git history keeps it
+
+Spacing the new poster: place `k` copies in `n` slides at `round(i * n / k)`. Measure the gaps **modulo n**, because the last copy's neighbour is the first copy of the next loop, not the end of the list.
 
 Check for orphans afterwards: any `photos/*.webp` not referenced by `index.html` is dead weight in the deploy.
 
