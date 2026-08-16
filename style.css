@@ -1848,7 +1848,9 @@ img{
 .carousel-track{
   display: flex;
   gap: 1rem;
-  animation: scroll 40s linear infinite;
+  /* Duration is per-loop, not per-slide, so it must grow with the deck or
+     the scroll speeds up. 19 slides at the original 2.35s each = 45s. */
+  animation: scroll 45s linear infinite;
   width: max-content;
 }
 
