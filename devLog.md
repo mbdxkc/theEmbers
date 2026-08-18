@@ -232,3 +232,30 @@ Identifying these needed looking at every photo; filenames carry no clue. The Ap
 - A stale-content sweep by keyword misses anything generically named. Follow a keyword grep with a visual pass over the same asset directory
 - `vw` units resolve against the viewport, not the parent element, so a harness that shrinks a container does not reproduce narrow-screen wrapping. Pin the test container to a percentage instead, or the text will appear to overflow when it would really wrap
 - Removing items changes every derived layout number. Both spacings and the animation duration were recomputed from the new count rather than carried over
+
+---
+
+## 2026-08-18 — Formal header on every page and the stylesheet
+
+`3068186` (4 files)
+
+### Change
+
+All four web files — `index.html`, `404.html`, `privacy.html`, `style.css` — now open with the studio's four-block header: PROJECT, AUTHORSHIP, LICENSE, IMPLEMENTATION NOTES. The shape is written up in `mBcode/CLAUDE.md` under File Headers and is now the same across obsbarkc, MuNi KC, mBdx and this repo.
+
+Only `index.html` had a header before. Its prose was worth keeping and was folded into IMPLEMENTATION NOTES: the structure list and the accessibility notes. `privacy.html` and `404.html` carried decorative banner comments with no content in them, which are gone. `style.css` had nothing.
+
+`@requires` is measured from the markup rather than carried over. The old header on `index.html` was accurate — `style.min.css` plus the two component scripts and the Google Fonts pair — but the other three files had never stated theirs.
+
+Version unified at 1.0.0 across all four, closing banners included. `@version` and `@updated` are the only hand-maintained fields, so they move together in the commit that touches any file here.
+
+The header on `style.css` does not need mirroring into `style.min.css`. The pages load the minified file and minification strips comments, so the source↔min rule that governs actual rule changes does not apply to a banner.
+
+### Verification
+
+All four linted after conversion: no unclosed tags, no duplicate ids, exactly one header per file, doctype still first. The CSS header was checked for a nested comment terminator, which would have swallowed the stylesheet. The linter was run against the pre-conversion files first, where it produced identical false positives on paired SVG `<path>` tags — so a clean-ish result meant something.
+
+### Mistakes → Rules
+
+- **Internal and client-facing files do not get the same header.** The Swift `Abstract:` convention assumes a reader inside the repo; a client deliverable in a public repo is read by people who need to know whose work it is and on what terms
+- **A banner in a source file that ships minified needs no mirror.** The source↔min rule exists for rules that change rendering; comments do not survive minification and cannot drift
