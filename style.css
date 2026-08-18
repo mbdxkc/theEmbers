@@ -1,9 +1,55 @@
-/* =========================================================
-   base stylesheet
-   design. code. clarity.
-   ========================================================= */
+/*
+  ============================================================================
 
+    THE EMBERS KC
+    Site stylesheet
 
+  ============================================================================
+    PROJECT
+  ============================================================================
+
+    @project      theEmbers
+    @file         style.css
+    @version      1.0.0
+    @updated      2026-08-18
+    @client       The Embers KC, a Kansas City cover band
+    @url          https://www.theemberskc.com/
+    @repository   https://github.com/mbdxkc/theEmbers
+
+  ============================================================================
+    AUTHORSHIP
+  ============================================================================
+
+    @author       Valdez Campos <dez@mediabrilliance.io>
+    @studio       mediaBrilliance — https://www.mediabrilliance.io
+    @contact      dez@mediabrilliance.io
+
+  ============================================================================
+    LICENSE
+  ============================================================================
+
+    Copyright © 2026 mediaBrilliance. All rights reserved.
+
+    Proprietary. This file and its source are the property of mediaBrilliance
+    (Valdez Campos), made available for reference and review only. No
+    permission is granted to use, copy, modify, merge, publish, distribute,
+    sublicense or sell any part of it without prior written permission from
+    the copyright holder. See LICENSE at the repository root for full terms.
+
+  ============================================================================
+    IMPLEMENTATION NOTES
+  ============================================================================
+
+    @desc         Every rule the site uses. Ships minified as style.min.css,
+                  which is the file the pages actually load — edit both or the
+                  change is a no-op.
+
+    @layout       15 custom properties, 9 media queries, 4 keyframe blocks.
+
+  ============================================================================
+    Embers v1.0.0  ·  style.css  ·  mediaBrilliance
+  ============================================================================
+*/
 /* =========================================================
    1) design tokens
    - single source of truth
