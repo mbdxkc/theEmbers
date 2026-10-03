@@ -52,7 +52,16 @@ There is no build script in the repo; the minified files are produced externally
 
 ## Splash promo
 
-`#ember-intro` is a fixed full-screen overlay shown once per session. `.intro-promo` inside it carries the current booking:
+`#ember-intro` is a fixed full-screen overlay shown once per session. `.intro-promo` inside it carries the current booking, or the generic line between bookings. Live since 3 Oct 2026 (the Aug. 22 show had passed):
+
+```html
+<div class="intro-promo">
+  <p class="promo-date">Your favorite Kansas City cover&nbsp;band</p>
+  <p class="promo-venue">Now booking</p>
+</div>
+```
+
+For a show, all four tiers return:
 
 ```html
 <div class="intro-promo">
@@ -65,7 +74,7 @@ There is no build script in the repo; the minified files are produced externally
 
 Four tiers by design: date as a spaced uppercase label, venue as the headline, guest billing in italic beneath it, address quiet last. `.promo-feat` is optional — drop the element when a show has no guest credit. Sizes use `clamp()` so the date holds one line at 320px and the venue does not overpower the logo on desktop.
 
-Between bookings this reverts to a single generic line. Update the markup and the three `.promo-*` rules stay as they are.
+Between bookings it carries the generic line above, label and headline only. Update the markup and the three `.promo-*` rules stay as they are.
 
 **Dates follow AP style**: abbreviate months of six or more letters against a specific date (Aug. 22, Sept. 3), spell out May, June and July; `8 p.m.` lowercase with periods; drop the year when the show is this year. The street address keeps postal form so it can be copied into a map.
 
