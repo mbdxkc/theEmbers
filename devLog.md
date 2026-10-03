@@ -259,3 +259,26 @@ All four linted after conversion: no unclosed tags, no duplicate ids, exactly on
 
 - **Internal and client-facing files do not get the same header.** The Swift `Abstract:` convention assumes a reader inside the repo; a client deliverable in a public repo is read by people who need to know whose work it is and on what terms
 - **A banner in a source file that ships minified needs no mirror.** The source↔min rule exists for rules that change rendering; comments do not survive minification and cannot drift
+
+---
+
+## 2026-10-03 — Studio credit, and the splash goes back to "now booking"
+
+`0d6e381` `60c5973` `b2811d4`
+
+### Change
+
+A studio credit under the copyright, injected by `footer.js` on the home page and written by hand into `privacy.html`, which has its own footer. 0.65rem against the Privacy Policy link's 0.75rem; the mark is `images/mb-mark.svg` at 1em. `style.min.css` was mirrored by hand, since cleancss does not reproduce the committed file; `footer.min.js` regenerates with terser.
+
+The splash promo still announced Saturday, Aug. 22 at Sunset Grill. It now reads "Your favorite Kansas City cover band" over "Now booking," with `cover&nbsp;band` so the label does not strand one word at 320px. The README keeps the show markup for the next booking.
+
+### Still open
+
+- The Aug. 22 poster is in the photo carousel three times
+- The README says the site deploys from GitHub Pages and may serve stale bundles. It is on Vercel, which serves `max-age=0, must-revalidate`
+- `devLog.md` itself is served publicly at theemberskc.com/devLog.md
+
+### Mistakes → Rules
+
+- **Dated promo copy needs a removal date when it ships.** This one ran six weeks past the show
+- **Vercel serves every file in the repo.** Anything internal in the root, this log included, is public unless excluded
