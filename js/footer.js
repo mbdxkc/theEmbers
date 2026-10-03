@@ -62,7 +62,7 @@
       <!-- STUDIO CREDIT -->
       <!-- The mark's display is inline on the img: this site has no cache stamps, so a stale stylesheet must not be able to drop it to a block -->
       <p class="footer-credit">Made in Kansas City by
-        <a href="https://www.mediabrilliance.io" target="_blank" rel="noopener"><img src="/images/mb.svg" width="14" height="14" alt="" style="display:inline-block;vertical-align:middle;margin:0 .3em 0 .1em">mediaBrilliance digitalxtudio</a></p>
+        <a href="https://www.mediabrilliance.io" target="_blank" rel="noopener"><img src="/images/mb-mark.svg" width="206" height="95" alt="" style="display:inline-block;vertical-align:-.12em;height:1em;width:auto;margin:0 .25em 0 .15em">mediaBrilliance digitalxtudio</a></p>
 
     </div>
   `;
