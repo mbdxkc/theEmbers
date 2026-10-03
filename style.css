@@ -10,8 +10,8 @@
 
     @project      theEmbers
     @file         style.css
-    @version      1.0.0
-    @updated      2026-08-18
+    @version      1.1.0
+    @updated      2026-10-03
     @client       The Embers KC, a Kansas City cover band
     @url          https://www.theemberskc.com/
     @repository   https://github.com/mbdxkc/theEmbers
@@ -47,7 +47,7 @@
     @layout       15 custom properties, 9 media queries, 4 keyframe blocks.
 
   ============================================================================
-    Embers v1.0.0  ·  style.css  ·  mediaBrilliance
+    Embers v1.1.0  ·  style.css  ·  mediaBrilliance
   ============================================================================
 */
 /* =========================================================
@@ -1861,6 +1861,23 @@ img{
 
 .footer-legal a:hover{
   opacity: 1;
+  color: var(--accent-secondary);
+}
+
+/* Studio credit. Smaller than the Privacy Policy link (.75rem). */
+.footer-credit{
+  margin-top: .75rem;
+  font-size: .65rem;
+  letter-spacing: .02em;
+  color: var(--muted);
+}
+
+.footer-credit a{
+  color: var(--muted);
+  transition: color var(--t-fast) ease;
+}
+
+.footer-credit a:hover{
   color: var(--accent-secondary);
 }
 

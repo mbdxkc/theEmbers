@@ -59,6 +59,11 @@
       <!-- Year is dynamically generated using JavaScript -->
       <p class="text-sm text-muted">&copy; ${new Date().getFullYear()} The Embers KC. All rights reserved.</p>
 
+      <!-- STUDIO CREDIT -->
+      <!-- The mark's display is inline on the img: this site has no cache stamps, so a stale stylesheet must not be able to drop it to a block -->
+      <p class="footer-credit">Made in Kansas City by
+        <a href="https://www.mediabrilliance.io" target="_blank" rel="noopener"><img src="/images/mb.svg" width="14" height="14" alt="" style="display:inline-block;vertical-align:middle;margin:0 .3em 0 .1em">mediaBrilliance digitalxtudio</a></p>
+
     </div>
   `;
 
