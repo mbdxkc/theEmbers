@@ -276,7 +276,7 @@ The splash promo still announced Saturday, Aug. 22 at Sunset Grill. It now reads
 
 - The Aug. 22 poster is in the photo carousel three times
 - The README says the site deploys from GitHub Pages and may serve stale bundles. It is on Vercel, which serves `max-age=0, must-revalidate`
-- `devLog.md` itself is served publicly at theemberskc.com/devLog.md
+- ~~`devLog.md` itself is served publicly~~ Fixed the same day: `.vercelignore` now keeps it and both Lighthouse reports out of the deploy (`ef541a8`, `90f4262`)
 
 ### Mistakes → Rules
 
