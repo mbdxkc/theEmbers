@@ -1,2 +1,4 @@
 # Kept in the repo, left out of the deploy: internal notes are not site content.
 /devLog.md
+/lighthouse-report.report.json
+/lighthouse-report.report.html
