@@ -282,3 +282,17 @@ The splash promo still announced Saturday, Aug. 22 at Sunset Grill. It now reads
 
 - **Dated promo copy needs a removal date when it ships.** This one ran six weeks past the show
 - **Vercel serves every file in the repo.** Anything internal in the root, this log included, is public unless excluded
+
+---
+
+## 2026-10-05 — SEO pass: plain titles, self-hosted Playfair (v1.2.0)
+
+The home title and description ran 67 and 161 characters and read as ad copy ("Premier", "Book the best KC cover band today!"); they now read "The Embers KC | Kansas City Cover Band & Live Music" and a 136-character plain description, matched in the share tags. The privacy page had a 41-character description and no share tags; it has both, worded to what the policy says.
+
+Google Fonts loaded Playfair Display and Inter on every page, render-blocking and third-party. Inter was never used: body text has been the system font all along. Playfair Display is now self-hosted (`fonts/`, one variable woff2 per subset covering 400-700, SIL OFL included), preloaded, and declared in `style.css`; `style.min.css` regenerated with `cleancss -O1` after confirming it matched the source rule for rule. Checked in Chrome: both pages load only the local font and make no third-party requests.
+
+Not fixable in code: theemberskc.com redirects to www with a 307, a temporary redirect. Set the apex to a permanent 308 in Vercel → Domains.
+
+### Mistakes → Rules
+
+- **A font request can outlive the font's use.** Inter shipped on every page for months with no rule using it; check `font-family` usage before self-hosting a pair
