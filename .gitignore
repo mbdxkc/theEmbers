@@ -15,3 +15,6 @@
 lighthouse-report.report.html
 .vercel
 .env*.local
+
+# Dependencies (installed at deploy, never committed)
+node_modules/
